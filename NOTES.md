@@ -23,3 +23,25 @@ After JWT creation:
 associated crdentials.Also this function is used to checck whther the token is valid or not and then authentication occur.
 - This function chains are used to create a new middleware that can provide auth function just by adding it to the route ad middleware.
 
+
+
+Implementing RATE LIMITER in our API gateway:
+- rate limiter is implemented din main index file.
+- We use library called express-rate-limiter for easier implementation.
+- 
+
+
+Implementing PROXY in our Project:
+- We use package called http-proxy-middleware
+   user
+    |
+    v
+localhost:3001(API GATEWAY) --> localhost:4000 (Booking Service)
+    |
+    v
+localhost:3000/api/v1/flights (flight-service)
+
+- process is done without exposing ip to each other maintaining abstraction.
+- 
+
+
