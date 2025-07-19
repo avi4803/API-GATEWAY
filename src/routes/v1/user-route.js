@@ -12,6 +12,12 @@ router.post('/signin',
     AuthRequestMiddlewares.validateAuthRequest,
     UserController.signin);
 
+router.post('/role',
+    AuthRequestMiddlewares.checkAuth,
+    AuthRequestMiddlewares.isAdmin,
+    AuthRequestMiddlewares.validateAddRoleRequest,
+    UserController.addRoleToUser);
+
 
 
 

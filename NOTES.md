@@ -47,6 +47,8 @@ localhost:3000/api/v1/flights (flight-service)
 
 
 Implementing Authorisation:
+- create many to many association using through table. A new table is created called roles which contains the various roles that exist. Also a through table called User-Roles is created to associate both data.
+- a separate api is created for assigning roles to the user
 - 
 
 
