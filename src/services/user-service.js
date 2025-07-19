@@ -8,7 +8,7 @@ const {Auth, Enums} = require('../utils/common/index')
 async function createUser(data) {
     try{
         const user = await userRepo.create(data);
-        const role = await roleRepo.getRoleByName(Enums.USER_ROLES_ENUMS.ADMIN);
+        const role = await roleRepo.getRoleByName(Enums.USER_ROLES_ENUMS.CUSTOMER);
         user.addRole(role);
         return user;
         
@@ -62,7 +62,7 @@ async function isAuthenticated(token){
             throw new AppError('Invalid JWT token', StatusCodes.BAD_REQUEST)
         }
         if(error.name == 'TokenExpiredError'){
-            throw new AppError('JWT Token exxpired', StatusCodes.BAD_REQUEST)
+            throw new AppError('JWT Token expired', StatusCodes.BAD_REQUEST)
         }
         console.log('log from user-service isAuthenicated function', error);
         throw new AppError('Something went wrong', StatusCodes.INTERNAL_SERVER_ERROR);

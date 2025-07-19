@@ -49,8 +49,16 @@ localhost:3000/api/v1/flights (flight-service)
 Implementing Authorisation:
 - create many to many association using through table. A new table is created called roles which contains the various roles that exist. Also a through table called User-Roles is created to associate both data.
 - a separate api is created for assigning roles to the user
-- 
+- a authorisation middle ware is created which verify the current role of the user.
 
+Creating create roles api(which can only be modified by admin):
+- simple crud api is used to get the user and the user.addRole(CUSTOMER) is called to get it done.
+- a middleware is created which verify whether the user is admin authorised and this middleware along with auth middleware is usedd to verify whether the user can modify user Roles or not.
+
+
+Notification / Reminder Services:
+ - PUB SUB is used for notification service (thus non blocking)
+ - 
 
 
 
