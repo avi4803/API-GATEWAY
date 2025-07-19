@@ -42,6 +42,13 @@ localhost:3001(API GATEWAY) --> localhost:4000 (Booking Service)
 localhost:3000/api/v1/flights (flight-service)
 
 - process is done without exposing ip to each other maintaining abstraction.
+- See http-proxy-middleware doc to use
+- it work simply like routing by creating middleware and using it in routing
+
+
+Implementing Authorisation:
 - 
+
+
 
 
